@@ -40,29 +40,29 @@ export class ForecastComponent implements OnInit, OnDestroy {
     this.http.get(url).subscribe((data: any) => {
       console.log(data);
 
-      this.weather_list=[];
-      for (var i = 0; i<data.list.length; i += 8) {
+      this.weather_list = [];
+      for (var i = 0; i < data.list.length; i += 8) {
         this.weather_list.push(data.list[i]);
-        if(i==0){
-          i=4
-        }
+        // if (i == 0) {
+        //   i = 4
+        // }
       }
 
       console.log(this.weather_list);
       this.ParametrosService.city = data.city.name;
-      this.ParametrosService.country =data.city.country;
+      this.ParametrosService.country = data.city.country;
       this.ParametrosService.temperature = data.list[0].main.temp.toFixed(1);
-      this.ParametrosService.weather_list=this.weather_list;
+      this.ParametrosService.weather_list = this.weather_list;
 
     });
 
 
-  
+
   }
 
-  public getSantizeUrl(url : string) {
+  public getSantizeUrl(url: string) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
-}
+  }
 
 
 }
