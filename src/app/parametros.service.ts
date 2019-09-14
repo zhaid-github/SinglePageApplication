@@ -12,7 +12,9 @@ export class ParametrosService {
   public lng: number = -102.3175689;
   public zoom: number = 12;
   public city: string = "Aguascalientes";
+  public country: string = "MX";
   public temperature: number = 0;
+  public weather_list: any=[];
 
 
   constructor() { }

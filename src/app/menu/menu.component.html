@@ -12,18 +12,10 @@
             <div class="dropdown-menu">
                 <a class="dropdown-item" (click)="openRoute('/map')">Map</a>
                 <a class="dropdown-item" (click)="openRoute('/weather')">Weather</a>
+                <a class="dropdown-item" (click)="openRoute('/forecast')">Forecast</a>
             </div>
         </li>
     </ul>
 </nav>
 
 <router-outlet></router-outlet>
-
-<br>
-Latitude: {{ParametrosService.lat}}
-<br>
-Longitude: {{ParametrosService.lng}}
-<br>
-City: {{ParametrosService.city}}
-<br>
-Temperature: {{ParametrosService.temperature}}

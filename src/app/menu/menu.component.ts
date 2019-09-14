@@ -13,7 +13,7 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  openRoute(route) {
+  openRoute(route: any) {
     this.router.navigate([route]);
   }
 

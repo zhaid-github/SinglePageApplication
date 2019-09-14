@@ -28,7 +28,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   callWeatherService() {
 
-    let url = 'http://api.openweathermap.org/data/2.5/weather?'
+    let url = 'http://api.openweathermap.org/data/2.5/forecast?'
       + 'lat=' + this.ParametrosService.lat
       + '&lon=' + this.ParametrosService.lng
       + '&units=metric'
@@ -37,8 +37,8 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
     this.http.get(url).subscribe((data: any) => {
       console.log(data);
-      this.ParametrosService.city = data.name;
-      this.ParametrosService.temperature = data.main.temp.toFixed(1);
+       this.ParametrosService.city = data.city.name;
+      this.ParametrosService.temperature = data.list[0].main.temp.toFixed(1);
     });
 
 

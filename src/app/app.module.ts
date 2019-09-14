@@ -9,6 +9,13 @@ import { WeatherComponent } from './weather/weather.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './inicio/inicio.component';
+import { ForecastComponent } from './forecast/forecast.component';
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { FahrenheitPipe } from './fahrenheit.pipe';
+import { MomentPipe } from './moment.pipe';
 
 
 @NgModule({
@@ -16,12 +23,18 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     MenuComponent,
     MapComponent,
-    WeatherComponent
+    WeatherComponent,
+    InicioComponent,
+    ForecastComponent,
+    FahrenheitPipe,
+    MomentPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCo5eHkeqhurDSk1LwGLQk0D2YUI8pbKhM'// Please use your own key here !!
     })
